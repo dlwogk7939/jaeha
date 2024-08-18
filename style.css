@@ -1,0 +1,66 @@
+/* Basic styling */
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-style: normal;
+  margin: 0;
+}
+
+/* Navigation menu styling */
+nav ul {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: auto;
+}
+
+nav ul li a {
+  color: #ffffff;
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background: #555;
+}
+
+nav ul li.name {
+  margin-left: 5%;
+  margin-right: 50%;
+}
+
+/* Main content area */
+main {
+  padding: 20px;
+}
+
+section {
+  padding: 20px;
+
+  &.intro {
+    color: black;
+    padding: 300px;
+    background: white right no-repeat url("image.png");
+  }
+
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #ffffff;
+}
