@@ -25,7 +25,7 @@ header {
 
   nav ul {
     margin: 0;
-    margin-right: 17rem;
+    margin-right: 20rem;
     float: right;
     list-style: none;
     overflow: hidden;
@@ -45,6 +45,14 @@ header {
 
   nav ul li:nth-child(1) a {
     color: white;
+  }
+
+  nav ul li:first-child a {
+    padding-left: 0;
+  }
+
+  nav ul li:last-child a {
+    padding-right: 0;
   }
 
   .circle {
@@ -107,7 +115,7 @@ main {
     img {
       /* float: right; */
       width: 35rem;
-      margin-right: 18.5rem;
+      margin-right: 21.5rem;
     }
 
   }
@@ -127,25 +135,62 @@ main {
       }
     }
 
+    
+
     .contents {
+      --size-container: 12rem;
       flex-flow: row wrap;
-      justify-content: space-evenly;
+      justify-content: space-between;
       display: flex;
       text-align: center;
+      margin-left: 20rem;
+      margin-right: 20rem;
+
+      /* div {
+        border: solid white 1rem;        
+        border-radius: 5%;
+        background-color: white;
+      } */
+
+      .container {        
+        border-radius: 50%;
+        width: var(--size-container);
+        height: var(--size-container);
+        border: solid white 0.2rem;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      p {
+        font-size: 1rem;
+      }
 
       .school {
+
         img {
-          width: 10rem;
+          width: calc(var(--size-container) + 0.5rem);;
         }
+
         p {
           /* margin: auto; */
         }
       }
 
       .location {
-        img {
-          width: 10rem;
+        .container {
+          background-color: white;
         }
+
+        img {
+          position: absolute;
+          width: 19rem;
+        }
+
         p {
           /* margin: auto; */
         }
@@ -153,12 +198,29 @@ main {
 
       .music {
         img {
-          width: 10rem;
+          width: var(--size-container);
         }
+
         p {
           /* margin: auto; */
         }
-      }      
+      }
+
+      .birthday {
+        .container {
+          background-color: white;
+        }
+        i {
+          font-size: 9rem;
+          color: red;
+        }
+
+        p {
+          /* margin: auto; */
+        }
+      }
+
+
     }
 
 
