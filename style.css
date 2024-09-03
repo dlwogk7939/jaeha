@@ -100,6 +100,7 @@ main {
     color: black;
     background-color: white;
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
@@ -148,6 +149,7 @@ main {
       --size-container: 15rem;
       justify-content: space-between;
       display: flex;
+      flex-flow: row wrap;
       text-align: center;
       margin-left: 20rem;
       margin-right: 20rem;
@@ -297,6 +299,7 @@ main {
 
         .explanation {
           text-align: center;
+
           span.degree {
             font-size: 3rem;
             font-weight: 500;
@@ -330,20 +333,23 @@ main {
 
     .contents {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: center;
       margin: 0;
       padding: 0;
       margin-left: 20rem;
       margin-right: 20rem;
 
-      .company {
-        padding-right: 3rem;
-        border-right: 1px solid white;
-        justify-content: center;
+      .job {
+        justify-content: flex-start;
         display: flex;
+        flex-flow: row nowrap;
+        margin: 5rem;
+        margin-left: 20rem;        
 
         .container {
+          /* margin-top: 3rem; */
+          margin-right: 1rem;
           background-color: white;
           border-radius: 50%;
           width: 25rem;
@@ -361,11 +367,32 @@ main {
             height: 10rem;
           }
 
-          span {
-            text-align: center;
+        }
+
+        .description {
+          padding-left: 3rem;
+          border-left: solid 0.2rem grey;
+          align-items: center;
+          h3 {
+            margin-top: 0rem;
+            margin-bottom: 1rem;
+            font-size: 5rem;
           }
+          .workplace {
+            font-size: 2rem;
+          }
+
+          .period {
+            font-size: 1.7rem;            
+          }
+
+          p {
+            font-size: 1.3rem;
+          }
+
         }
       }
+
     }
   }
 }
