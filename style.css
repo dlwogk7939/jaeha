@@ -2,12 +2,14 @@
 html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 10px;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+
 }
 
 img {
@@ -23,28 +25,29 @@ header {
   border-bottom: 0.3rem solid dimgray;
 
   nav {
-    /* max-width: 150rem; */
     margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
   }
 
   nav ul {
     margin: 0;
-    margin-right: 20rem;
     float: right;
     list-style: none;
     overflow: hidden;
-  }
-
-  nav ul li {
-    display: inline-block;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
   nav ul li a {
     padding: 1rem 2rem;
-    display: inline-block;
     color: dimgray;
     text-decoration: none;
     font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
   }
 
   nav ul li:nth-child(1) a {
@@ -65,7 +68,6 @@ header {
     border-radius: 50%;
     padding: 0;
     margin: 0.5rem;
-    margin-left: 20rem;
     width: 3.3rem;
     height: 3.3rem;
     background: white;
@@ -93,8 +95,11 @@ header {
 main {
   padding: 0;
   margin: 0;
+  left: 0;
+  right: 0;
 
   .intro {
+
     height: 95.3rem;
     margin: 0;
     color: black;
@@ -105,9 +110,12 @@ main {
     justify-content: space-between;
     box-sizing: border-box;
 
+    .contents {
+      width: 80%;
+    }
+
     .headline {
       margin-left: 20rem;
-
       h1 {
         font-size: 7.5rem;
         font-weight: 600;
@@ -124,6 +132,7 @@ main {
     img {
       /* float: right; */
       width: 35rem;
+      padding-left: 20rem;
       margin-right: 21.5rem;
     }
   }
@@ -221,7 +230,7 @@ main {
         width: 10rem;
         height: 12rem;
         padding: 1.5rem 2rem;
-        border-radius: 1.2rem;
+        border-radius: 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -300,12 +309,13 @@ main {
         .explanation {
           text-align: center;
 
-          span.degree {
+          p.degree {
             font-size: 3rem;
             font-weight: 500;
           }
 
-          span.additional_explanation {
+          p.additional_explanation {
+            color: darkgrey;
             font-size: 2rem;
           }
         }
@@ -339,21 +349,22 @@ main {
       padding: 0;
       margin-left: 20rem;
       margin-right: 20rem;
+      margin-bottom: 10rem;
 
       .job {
         justify-content: flex-start;
         display: flex;
         flex-flow: row nowrap;
-        margin: 5rem;
-        margin-left: 20rem;        
+        margin: 0;
+        margin-left: 25rem;
 
         .container {
-          /* margin-top: 3rem; */
-          margin-right: 1rem;
+          margin-top: 5rem;
+          margin-right: 5rem;
           background-color: white;
           border-radius: 50%;
-          width: 25rem;
-          height: 25rem;
+          width: 23rem;
+          height: 23rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -362,34 +373,51 @@ main {
           flex-shrink: 0;
 
           /* margin-left: 15rem; */
-          img {
-            width: 10rem;
-            height: 10rem;
+          .army {
+            width: 15rem;
+            height: 15rem;
+          }
+
+          .osu {
+            width: 14rem;
+            height: 14rem;
           }
 
         }
 
+
         .description {
-          padding-left: 3rem;
-          border-left: solid 0.2rem grey;
+          padding-left: 7rem;
+          border-left: solid 0.2rem white;
           align-items: center;
+          padding-top: 8rem;
+          margin: 0;
+          padding-bottom: 15rem;
+
+          div:nth-child(1) {
+            margin-bottom: 10rem;
+          }
+
           h3 {
             margin-top: 0rem;
-            margin-bottom: 1rem;
-            font-size: 5rem;
+            margin-bottom: 0rem;
+            font-size: 4rem;
           }
+
           .workplace {
-            font-size: 2rem;
+            color: darkgray;
+            font-size: 1.5rem;
           }
 
-          .period {
-            font-size: 1.7rem;            
+          ul {
+            font-size: 1.5rem;
+            padding-left: 2rem;
           }
 
-          p {
-            font-size: 1.3rem;
-          }
+        }
 
+        &:last-child .description {
+          padding-bottom: 5rem;
         }
       }
 
