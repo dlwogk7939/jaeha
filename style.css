@@ -9,7 +9,8 @@ html {
 
 body {
   margin: 0;
-
+  min-width: 1280px;
+  min-height: 720px;
 }
 
 img {
@@ -99,9 +100,7 @@ main {
   right: 0;
 
   .intro {
-
     height: 95.3rem;
-    margin: 0;
     color: black;
     background-color: white;
     display: flex;
@@ -110,12 +109,9 @@ main {
     justify-content: space-between;
     box-sizing: border-box;
 
-    .contents {
-      width: 80%;
-    }
-
     .headline {
       margin-left: 20rem;
+
       h1 {
         font-size: 7.5rem;
         font-weight: 600;
@@ -130,7 +126,6 @@ main {
     }
 
     img {
-      /* float: right; */
       width: 35rem;
       padding-left: 20rem;
       margin-right: 21.5rem;
@@ -425,15 +420,31 @@ main {
   }
 }
 
-
-
-
-
-
 /* Footer styling */
 footer {
   text-align: center;
   padding: 2rem;
-  background: #333;
-  color: #ffffff;
+  background: rgb(22, 22, 23);
+  color: white;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 4rem;
+      padding: 2rem;
+      color: white;
+    }
+
+    img {
+      height: 4rem;
+      padding: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
 }
