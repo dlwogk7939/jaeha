@@ -31,19 +31,19 @@
 <body>
   <header>
     <nav>
-      <div class="circle" style="cursor: pointer;" onclick="window.location='index.html';"><a class="logo">JL</a></div>
+      <div class="circle" onclick="scrollToSection('intro')"><a class="logo">JL</a></div>
       <ul>
-        <li><a class="asdf" href="index.html">Home</a></li>
-        <li><a href="education.html">About Me</a></li>
-        <li><a href="experience.html">Skills</a></li>
-        <li><a href="project.html">Education</a></li>
-        <li><a href="project.html">Experience</a></li>
+        <li><a href="#intro" onclick="scrollToSection('intro')">Home</a></li>
+        <li><a href="#about_me" onclick="scrollToSection('about_me')">About Me</a></li>
+        <li><a href="#skills" onclick="scrollToSection('skills')">Skills</a></li>
+        <li><a href="#education" onclick="scrollToSection('education')">Education</a></li>
+        <li><a href="#experience" onclick="scrollToSection('experience')">Experience</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
+    <section class="intro" id="intro">
       <div class="headline">
         <h1>
           Jaeha Lee,<br>
@@ -57,7 +57,7 @@
       <img src="assets/profile.jpg" alt="Profile picture">
     </section>
 
-    <section class="about_me">
+    <section class="about_me" id="about_me">
       <div class="heading">
         <h2>
           About me
@@ -110,7 +110,7 @@
       </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
       <div class="heading">
         <h2>
           Skills
@@ -157,7 +157,7 @@
       </div>
     </section>
 
-    <section class="education">
+    <section class="education" id="education">
       <div class="heading">
         <h2>
           Education
@@ -185,7 +185,7 @@
       </div>
     </section>
 
-    <section class="experience">
+    <section class="experience" id="experience">
 
       <div class="heading">
         <h2>
@@ -254,8 +254,41 @@
       <a href="mailto:dlwogk121@gmail.com"><i class="fa-regular fa-envelope"></i></a>
     </div>
     <p>&copy; 2024 Jaeha Lee. All rights reserved.</p>
-
   </footer>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('scroll', function () {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav ul li a');
+
+      let currentSectionId = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+
+        if (pageYOffset >= sectionTop - 150 && pageYOffset < sectionBottom - 150) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSectionId)) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  </script>
 
 </body>
 
