@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3M741GMTX0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3M741GMTX0');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="image/jpeg" href="hardcore-streamerstakes.jpeg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="styles.css" rel="stylesheet">
+    <title>StreamerStakes - Minesweeper</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/dashboard">StreamerStakes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"></li>
+                <a class="nav-link" href="/dashboard">Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/groups">Groups</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/friends">Friends</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/buy-tokens">Tokens</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add-card">Add Payment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cashout">Cashout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/logout">Sign Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="toolbar">
+    <div class="balance d-flex align-items-center" style="background-color: #333; padding: 10px 20px; border-radius: 30px;">
+        <!-- Coin Balance with Plus Button -->
+        <img src="new-icons/coin.png" alt="Coins" style="width: 32px; height: 32px; margin-right: 10px;">
+        <span id="tokens" style="color: white; font-size: 1.5rem; margin-right: 10px;">0</span>
+        <a href="/buy-tokens" class="btn btn-outline-light btn-sm rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+            <i class="bi bi-plus-circle-fill" style="font-size: 1.2rem;"></i>
+        </a>
+
+        <!-- Notifications -->
+        <div class="notification ml-3 d-flex align-items-center">
+            <div class="position-relative" style="width: 40px; height: 40px; background-color: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <a href="#" id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-bell-fill" style="color: white; font-size: 1.5rem;"></i>
+                
+                    <!-- Red Notification Dot -->
+                    
+                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle" style="width: 10px; height: 10px;"></span>
+                    
+                </a>
+                
+                <!-- Notifications Dropdown -->
+                <ul class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationBell">
+                    
+                        
+                            <li>
+                                <a class="dropdown-item unread" href="#" data-notification-id="165">
+                                    <p class="mb-0">Congrats! You scored highest for Tetris on 2024-11-05 with a score of 4500 and won 1 StakeCoins!</p>
+                                    <small class="text-muted">11/6/2024, 12:00:00 AM</small>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container mb-5">
+    <div class="row">
+        <!-- Info Column -->
+        <div class="col-lg-6 mb-4">
+            <h2>Minesweeper</h1>
+            <h3 class="section-title">How to play</h3>
+            
+                <ul class="list-unstyled">
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Click to reveal squares
+                        </li>
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Avoid mines to stay alive
+                        </li>
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Flag squares you think contain mines
+                        </li>
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Clear all safe squares to win!
+                        </li>
+                    
+                </ul>
+            
+            
+            <h3 class="section-title">Tips</h3>
+            
+                <ul class="list-unstyled">
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Use logic to determine where mines are
+                        </li>
+                    
+                        <li class="mb-2">
+                            <i class="bi bi-dot"></i> Flagging helps keep track of mines
+                        </li>
+                    
+                </ul>
+            
+            
+
+            <div class="mt-4">
+                <!-- Practice Button -->
+                <button id="practiceButton" class="btn btn-grey">Practice <span class="practice-tokens">0</span></button>
+              
+                <!-- Play Button -->
+                <button onclick="location.href='TicTacToe'" id="playButton" class="btn btn-white">Play</button>
+              </div>
+
+        </div>
+
+        <!-- Leaderboard Column -->
+        <div class="col-lg-6">
+            <h3 class="section-title" style="margin-top: 0px;">Leaderboard</h3>
+
+            <!-- Tabs for leaderboards -->
+            <div class="leaderboard-tabs">
+                <button class="tab-button active" data-tab="global">Global</button>
+                
+            </div>
+
+            <!-- Leaderboard content -->
+            <div class="leaderboard-content">
+                <!-- Global Leaderboard -->
+                <div class="leaderboard-table active" id="global">
+                    <p class="end-time">* Ends in 11 hours</p>
+                    <div class="leaderboard-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Group Leaderboards -->
+                
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="practiceContainer" class="result-container">
+    <span class="close-icon" onclick="closeResultContainer()">&times;</span>
+    <p id="practiceContainerMessage" class="result-text"></p>
+</div>
+
+<div id="playContainer" class="result-container">
+    <span class="close-icon" onclick="closeResultContainer()">&times;</span>
+    <div class="result-text">
+        <h4>Which leaderboard?</h4>
+        <form id="playForm">
+            <select name="leaderboard" id="leaderboardSelect" class="form-control mb-3">
+                <option value="Global">Global</option>
+                
+            </select>
+            <input type="hidden" name="entry_fee" value="1">
+            <button type="submit" id="playSubmitButton" class="btn btn-blk">
+                Play <span id="coinCost" style="margin-left: 20px;">1</span> <img src="new-icons/coin.png" alt="Coins" style="width: 30px; height: 30px;">
+            </button>
+        </form>
+    </div>
+</div>
+
+<div id="playResultContainer" class="result-container">
+    <span class="close-icon" onclick="closeResultContainer()">&times;</span>
+    <p id="playResultContainerMessage" class="result-text"></p>
+</div>
+
+
+<script>
+    // Pass the game name to the JavaScript file
+    var gameName = "TicTacToe";
+    var entryFee = "1";
+</script>
+<script src="js/play.js"></script>
+<script src="js/leaderboard.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
