@@ -1,57 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
-    <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #121212; /* Dark background */
-            color: #ffffff; /* Default text color */
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
+<!doctype html>
 
-        h1 {
-            margin: 20px 0;
-            color: #ffffff; /* White text */
-        }
-        
-        .board {
-            display: grid;
-            grid-template-columns: repeat(3, 200px);
-            grid-gap: 5px;
-        }
-        .cell {
-            width: 200px;
-            height: 200px;
-            font-size: 24px;            
-            background-color: #444444; /* Dark gray */
-            border: 1px solid #888888; /* Adjust border color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            color: #ffffff; /* Text color for numbers */
-            transition: background-color 0.3s, transform 0.3s; /* For animations */
-        }
-        .cell.taken {
-            cursor: not-allowed;
-            background-color: #e0e0e0;
+<html>
+
+<head>
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <!-- CSS for examples -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>   
+
+    <!-- for splashscreen -->
+    <style>
+        #loading {
+            outline: none;
+            border: none;
+            background: transparent
         }
     </style>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
+    </script>
+
+    <title>Tic Tac Toe</title>
 </head>
+
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div class="board" id="board"></div>
-    <p id="message"></p>
-    <button onclick="restartGame()">Restart</button>
-    <script src="tictactoe.js"></script>
+    <dialog id="loading">
+        <h1>Loading...</h1>
+    </dialog>    
+
+    <section class="pyscript">
+        <h1>Tic-Tac-Toe</h1>
+
+        <script type="py" src="main.py" config="pyscript.toml"></script>
+
+        <table id="board">
+            <tr>
+                <td>
+                    <div id="cell00" data-x="0" data-y="0" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell01" data-x="0" data-y="1" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell02" data-x="0" data-y="2" class="cell" py-click="GAME.click"></div>
+                </td>
+            <tr>
+                <td>
+                    <div id="cell10" data-x="1" data-y="0" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell11" data-x="1" data-y="1" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell12" data-x="1" data-y="2" class="cell" py-click="GAME.click"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="cell20" data-x="2" data-y="0" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell21" data-x="2" data-y="1" class="cell" py-click="GAME.click"></div>
+                </td>
+                <td>
+                    <div id="cell22" data-x="2" data-y="2" class="cell" py-click="GAME.click"></div>
+                </td>
+            </tr>
+        </table>
+
+        <h2 id="status"></h2>
+        <button id="btn-new-game" py-click="GAME.new_game">New game</button>
+        <button id="btn-toggle-terminal" py-click="GAME.toggle_terminal">Hide/show terminal</button>
+
+        <div id="terminal" hidden="hidden">
+            <script id="console" type="py" terminal></script>
+        </div>
+
+    </section>
 </body>
+
 </html>

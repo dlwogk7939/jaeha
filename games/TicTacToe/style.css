@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.pyscript {
+    margin: 0.5rem;
+}
+
+.title {
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 2em;
+    white-space: nowrap;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+#board {
+    position: relative;
+    font-size: 120px;
+    margin: 1% auto;
+    border-collapse: collapse;
+}
+
+#board td {
+    border: 4px solid #444444;
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+#board td div {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #444444;
+    border: 1px solid #888888;
+    cursor: pointer;
+    color: white;    
+}
+
+.win {
+    background-color: beige;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    font-size: 48px;
+}
+
+button {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555555;
+}
